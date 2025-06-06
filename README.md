@@ -1,5 +1,5 @@
 ## DCHPConnectionListener-v1.0
-Network utility written on scapy. Uses for sniff DHCP packages from opcode 3, and intercept connection new
+Network utility written on scapy. Uses for sniff DHCP packages with opcode 3, and intercept connection of new
 machines to current network
 
 ## Installing
