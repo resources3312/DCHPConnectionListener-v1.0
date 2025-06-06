@@ -19,17 +19,12 @@ class ARPHandler:
         print(f"DCHPConnectionListener v1.0\n{'-' * 50}")
         
         try: sniff(filter="udp and (port 67 or port 68)", prn=self.packetCheck, store=0, iface=self.interface)
-        except KeyboardInterrupt: sys.exit("Quitting..")
-
-
-def getArgument(argument: str) -> str:
-    return 
+        except (IndexError, ValueError): sys.exit("Usage: dcsniffer.py --interface <network-interface>")
+        except OSError: sys.exit("Interface doesnt`t exists, try again..")
 
 def main() -> None:
-    if "--interface" not in sys.argv: sys.exit("Usage: dcscanner --interface <network-interface>")
-
+    if "--interface" not in sys.argv: sys.exit("Usage: dcsniffer.py --interface <network-interface>")
     scanner = ARPHandler(interface=sys.argv[sys.argv.index("--interface") + 1])
-    
     scanner.startARPMonitor()
 
 if __name__ == '__main__': main()
