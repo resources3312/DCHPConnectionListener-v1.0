@@ -13,3 +13,6 @@ chmod +x /usr/bin/dcscanner.py
 ```
 dcscanner.py --interface <your-interface>
 ```
+```python
+print(get_files_with_ext(ext="py"))
+```
